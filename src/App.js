@@ -5,6 +5,7 @@ import Menu2 from './components/Menu2';
 import Toggler from './components/Toggler';
 import Favorite2 from './components/Favorite2';
 import Toggler2 from './components/Toggler2';
+import DataFetcher from './components/DataFetcher';
 
 function App() {
   return (
@@ -27,6 +28,18 @@ function App() {
           }
         }
       </Toggler2>
+
+
+      <h2>Apply render props for self fetching API component</h2>
+       <DataFetcher url="https://swapi.dev/api/people/1">
+            {({data, loading}) => {
+                return (
+                    loading ? 
+                    <h1>Loading...</h1> :
+                    <p>{JSON.stringify(data)}</p>
+                )
+            }}
+        </DataFetcher>
     </div>
   );
 }
