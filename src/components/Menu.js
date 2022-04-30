@@ -2,7 +2,7 @@ import Toggler from "./Toggler"
 
 export default function Menu(props) {
     return (
-        <Toggler defaultOnValue={true} render={function(on, toggle) {
+        <Toggler defaultOnValue={true} render={function({on, toggle}) {
             return (
                 <div>
                     <button onClick={toggle}>{on ? "Hide" : "Show"} Menu </button>

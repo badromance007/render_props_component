@@ -9,7 +9,10 @@ export default function Toggler(props) {
 
     return (
         <div>
-            {props.render(on, toggle)}
+            {props.render({
+                on: on,
+                toggle: toggle
+            })}
         </div>
     )
 }
